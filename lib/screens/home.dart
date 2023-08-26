@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
       ),
-      body: SafeArea(
+      body: const SafeArea(
         bottom: false,
         child: WebView(
           initialUrl: 'https://gdg-test.netlify.app/',
