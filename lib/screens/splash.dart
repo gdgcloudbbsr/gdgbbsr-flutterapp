@@ -15,7 +15,15 @@ class _SplashScreenState extends State<SplashScreen> {
       const Duration(seconds: 2),
       () {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => const HomePage()));
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomePage(
+              pageLink: "https://gdg-test.netlify.app",
+              pageName: "GDG Home",
+              pageTitle: "GDG Bhubaneswar",
+            ),
+          ),
+        );
       },
     );
   }
@@ -30,10 +38,13 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: Text(
-          'GDG Bhubaneswar',
-          style: Theme.of(context).textTheme.headlineSmall,
+      body: Container(
+        color: Colors.grey[900],
+        child: Center(
+          child: Text(
+            'GDG Bhubaneswar',
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
         ),
       ),
     );

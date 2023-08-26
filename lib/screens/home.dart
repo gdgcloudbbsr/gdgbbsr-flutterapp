@@ -2,7 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final String pageName;
+  final String pageTitle;
+  final String pageLink;
+  const HomePage(
+      {required this.pageName,
+      required this.pageTitle,
+      required this.pageLink,
+      super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -14,11 +21,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
+        title: Text(widget.pageName),
+        centerTitle: true,
+        foregroundColor: Colors.white,
       ),
-      body: const SafeArea(
+      body: SafeArea(
         bottom: false,
         child: WebView(
-          initialUrl: 'https://gdg-test.netlify.app/',
+          initialUrl: widget.pageLink,
           javascriptMode: JavascriptMode.unrestricted,
         ),
       ),
