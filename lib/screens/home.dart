@@ -11,8 +11,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey[900],
+      ),
       body: SafeArea(
+        bottom: false,
         child: WebView(
           initialUrl: 'https://gdg-test.netlify.app/',
           javascriptMode: JavascriptMode.unrestricted,
