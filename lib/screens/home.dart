@@ -5,11 +5,12 @@ class HomePage extends StatefulWidget {
   final String pageName;
   final String pageTitle;
   final String pageLink;
-  const HomePage(
-      {required this.pageName,
-      required this.pageTitle,
-      required this.pageLink,
-      super.key});
+  const HomePage({
+    required this.pageName,
+    required this.pageTitle,
+    required this.pageLink,
+    super.key,
+  });
 
   @override
   State<HomePage> createState() => _HomePageState();
