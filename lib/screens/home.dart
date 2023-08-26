@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gdgbbsr/screens/app_drawer.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,9 +21,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: const AppDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
-        title: Text(widget.pageName),
+        title: Text(widget.pageTitle),
         centerTitle: true,
         foregroundColor: Colors.white,
       ),
