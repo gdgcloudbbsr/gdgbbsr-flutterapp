@@ -14,7 +14,7 @@ class _SplashScreenState extends State<SplashScreen> {
   //make a function that will wait for 2 seconds and then navigate to home page
   void _navigateToHome(BuildContext context) {
     Future.delayed(
-      const Duration(seconds: 3),
+      const Duration(seconds: 4),
       () {
         Navigator.pushReplacement(
           context,

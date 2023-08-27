@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:gdgbbsr/providers/api_calls.dart';
 import 'package:gdgbbsr/screens/app_drawer.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'notification_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -125,9 +125,10 @@ class _HomePageState extends State<HomePage> {
           } else {
             return SafeArea(
               bottom: false,
-              child: WebView(
-                initialUrl: widget.pageLink,
-                javascriptMode: JavascriptMode.unrestricted,
+              child: InAppWebView(
+                initialUrlRequest: URLRequest(
+                  url: Uri.parse(widget.pageLink),
+                ),
               ),
             );
           }
