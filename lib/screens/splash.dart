@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gdgbbsr/screens/home.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -41,9 +43,49 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Container(
         color: Colors.grey[900],
         child: Center(
-          child: Text(
-            'GDG Bhubaneswar',
-            style: Theme.of(context).textTheme.headlineSmall,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Lottie.asset(
+                'lib/assets/gdg_logo.json',
+                height: 200,
+              ),
+              Text.rich(
+                TextSpan(
+                    text: "G",
+                    style: GoogleFonts.poppins(
+                      color: Colors.green,
+                      fontSize: 30,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "D",
+                        style: GoogleFonts.poppins(
+                          color: Colors.yellow,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      TextSpan(
+                        text: "G",
+                        style: GoogleFonts.poppins(
+                          color: Colors.red,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      TextSpan(
+                        text: " Bhubaneswar",
+                        style: GoogleFonts.poppins(
+                          color: Colors.blue[400],
+                          fontSize: 30,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ]),
+              )
+            ],
           ),
         ),
       ),
