@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gdgbbsr/providers/api_calls.dart';
 import 'package:gdgbbsr/screens/home.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppDrawer extends StatefulWidget {
   const AppDrawer({super.key});
@@ -46,9 +47,10 @@ class _AppDrawerState extends State<AppDrawer> {
                       ),
                       title: Text(
                         snapshot.data?["data"][index]["title"],
-                        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                              color: Colors.white,
-                            ),
+                        style: GoogleFonts.poppins(
+                          color: Colors.white,
+                          fontWeight: FontWeight.normal,
+                        ),
                       ),
                       onTap: () {
                         Navigator.pop(context);
