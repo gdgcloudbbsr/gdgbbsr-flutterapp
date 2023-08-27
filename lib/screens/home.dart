@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:gdgbbsr/providers/api_calls.dart';
 import 'package:gdgbbsr/screens/app_drawer.dart';
+import 'package:gdgbbsr/widgets/maintainance.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
 import 'notification_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -56,72 +56,7 @@ class _HomePageState extends State<HomePage> {
         future: GdgApi.checkBackendStatus(),
         builder: (context, snapshot) {
           if (snapshot.data?["backend_status"] != "working") {
-            return SafeArea(
-              bottom: false,
-              child: Container(
-                color: Colors.grey[900],
-                child: Center(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Lottie.asset(
-                        "lib/assets/gdg_logo.json",
-                        height: 200,
-                        width: double.infinity,
-                      ),
-                      Text.rich(
-                        TextSpan(
-                          text: "GDG",
-                          style: GoogleFonts.poppins(
-                            color: Colors.yellow,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 20,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: " Bhubaneswar",
-                              style: GoogleFonts.poppins(
-                                color: Colors.white,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Text(
-                        "App is under maintainance",
-                        style: GoogleFonts.poppins(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 20,
-                        ),
-                      ),
-                      Text.rich(
-                        TextSpan(
-                          text: "We will be back",
-                          style: GoogleFonts.poppins(
-                            color: Colors.blue[300],
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                          ),
-                          children: [
-                            TextSpan(
-                              text: " Soon!!",
-                              style: GoogleFonts.poppins(
-                                color: Colors.green,
-                                fontWeight: FontWeight.w700,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            );
+            return const Maintainance();
           } else {
             return SafeArea(
               bottom: false,
