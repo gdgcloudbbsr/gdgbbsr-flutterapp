@@ -63,6 +63,15 @@ class _HomePageState extends State<HomePage> {
               child: InAppWebView(
                 initialUrlRequest: URLRequest(
                   url: Uri.parse(widget.pageLink),
+                  headers: {
+                    'User-Agent':
+                        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
+                    'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8,de;q=0.7',
+                    'Referer': 'https://www.example.com/page1.html',
+                    'Cookie': 'session_id=abc123; user_pref=dark_mode',
+                    'Cache-Control': 'max-age=3600, private, must-revalidate',
+                    'Origin': 'https://www.swoyam.enginner',
+                  },
                 ),
               ),
             );
